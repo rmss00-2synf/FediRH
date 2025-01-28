@@ -26,7 +26,7 @@ services:
       POSTGRES_PASSWORD: password
       POSTGRES_DB: federation_db_postgres
     ports:
-      - "5432:5432"
+      - "5438:5432"
     volumes:
       - D:\DB\federe\postgres_data:/var/lib/postgresql/data
     networks:
