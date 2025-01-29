@@ -11,9 +11,6 @@ INSERT INTO contrats (id_contrat, type_contrat, duree, conditions) VALUES (1, 'C
 INSERT INTO employes (id_employe, nom, prenom, date_embauche, poste, id_departement) VALUES (101, 'El Fassi', 'Ahmed', TO_DATE('2015-03-12', 'YYYY-MM-DD'), 'Manager', 1);
 INSERT INTO employes (id_employe, nom, prenom, date_embauche, poste, id_departement) VALUES (102, 'Bennani', 'Fatima', TO_DATE('2018-06-01', 'YYYY-MM-DD'), 'Responsable Ventes', 2);
 
--- Insertion dans la table absences
-INSERT INTO absences (id_absence, id_employe, date_debut, date_fin, motif, type_absence, id_type_conge) VALUES (1, 101, TO_DATE('2023-03-01', 'YYYY-MM-DD'), TO_DATE('2023-03-05', 'YYYY-MM-DD'), 'Congé annuel', 'Congé', 1);
-
 -- Insertion dans la table performances
 INSERT INTO performances (id_performance, id_employe, date_realisation, montant_vente, commentaire) VALUES (1, 102, TO_DATE('2023-03-15', 'YYYY-MM-DD'), 12000, 'Performance exceptionnelle');
 
@@ -22,3 +19,6 @@ INSERT INTO conges (id_type_conge, nom_conge, description) VALUES (1, 'Congé An
 
 -- Insertion dans la table employes_contrats
 INSERT INTO employes_contrats (id_employe, id_contrat, date_debut, date_fin) VALUES (101, 1, TO_DATE('2015-03-12', 'YYYY-MM-DD'), NULL);
+
+-- Insertion dans la table absences
+INSERT INTO absences (id_absence, id_employe, date_debut, date_fin, motif, type_absence, id_type_conge) VALUES (1, 101, TO_DATE('2023-03-01', 'YYYY-MM-DD'), TO_DATE('2023-03-05', 'YYYY-MM-DD'), 'Congé annuel', 'Congé', 1);

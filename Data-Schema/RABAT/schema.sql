@@ -67,7 +67,28 @@ CREATE TABLE employes_contrats
     CONSTRAINT fk_contrats FOREIGN KEY (id_contrat) REFERENCES contrats (id_contrat)
 );
 
+/* Vue des employés avec leur département */
+CREATE VIEW vue_employes_departements AS
+SELECT e.id_employe, e.nom, e.prenom, e.poste, d.nom_departement
+FROM employes e
+JOIN departements d ON e.id_departement = d.id_departement;
 
+/* Vue des absences des employés avec leur motif et type de congé */
+CREATE VIEW vue_absences AS
+SELECT a.id_absence, e.nom, e.prenom, a.date_debut, a.date_fin, a.motif, c.nom_conge
+FROM absences a
+JOIN employes e ON a.id_employe = e.id_employe
+JOIN conges c ON a.id_type_conge = c.id_type_conge;
 
+/* Vue des performances des employés*/
+CREATE VIEW vue_performances AS
+SELECT p.id_performance, e.nom, e.prenom, p.date_realisation, p.commentaire
+FROM performances p
+JOIN employes e ON p.id_employe = e.id_employe;
 
-
+/* Vue des contrats des employés*/
+CREATE VIEW vue_employes_contrats AS
+SELECT ec.id_employe, e.nom, e.prenom, c.type_contrat, ec.date_debut, ec.date_fin
+FROM employes_contrats ec
+JOIN employes e ON ec.id_employe = e.id_employe
+JOIN contrats c ON ec.id_contrat = c.id_contrat;
